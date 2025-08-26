@@ -129,6 +129,55 @@ Follow these steps to set up and run the project locally:
 ✅ Now your app should be running locally — you can upload images/videos and try all processing features.
 
 ---
+## 11. Screenshots
+
+This section provides visual references for each feature of the **Image & Video Processing Application**.  
+
+### Image Processing Features
+
+**Upload Image**  
+![Upload Image]("C:\Users\srija\Pictures\Screenshots\Screenshot (652).png")  
+
+**Draw Line**  
+![Draw Line](path/to/screenshot2.png)  
+
+**Add Text**  
+![Add Text](path/to/screenshot3.png)  
+
+**Draw Circle**  
+![Draw Circle](path/to/screenshot4.png)  
+
+**Add Date/Time**  
+![Add DateTime](path/to/screenshot5.png)  
+
+**Image Addition**  
+![Add Images](path/to/screenshot6.png)  
+
+**Weighted Addition**  
+![Weighted Add](path/to/screenshot7.png)  
+
+**Edge Detection**  
+![Edge Detection](path/to/screenshot8.png)  
+
+**Face Detection (Image)**  
+![Face Detection](path/to/screenshot9.png)  
+
+### Video Processing Features
+
+**Upload Video**  
+![Upload Video](path/to/screenshot10.png)  
+
+**Frame Count**  
+![Frame Count](path/to/screenshot11.png)  
+
+**Date/Time Overlay (Video)**  
+![DateTime Video](path/to/screenshot12.png)  
+
+**Face Detection (Video)**  
+![Face Detection Video](path/to/screenshot13.png)  
+
+> **Note:** Replace `path/to/screenshotX.png` with the actual paths to your screenshots.
+
 
 ## 🧪 Testing  
 
