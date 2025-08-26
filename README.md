@@ -82,19 +82,63 @@ Users can:
 
 ## ⚙️ Installation & Setup  
 
+Follow these steps to set up and run the project locally:
+
 1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/your-username/image-video-processor.git
-   cd image-video-processor
-2. **Create virtual environment :**
-   python -m venv venv
-   source venv/bin/activate   # On Windows: venv\Scripts\activate
-3. **Install dependencies :**
-   pip install -r requirements.txt
-4. **Run the Flask app :**
-   python app.py
-5. **Open the browser and visit :**
-   http://127.0.0.1:5000/
+   git clone https://github.com/your-username/image-video-processor.git  
+   cd image-video-processor  
+
+2. **(Optional) Create a virtual environment**  
+   It’s recommended to use a virtual environment to avoid dependency conflicts.  
+
+   python -m venv venv  
+
+   Activate it:  
+   - Windows (PowerShell):  
+     venv\Scripts\activate  
+   - Linux / macOS:  
+     source venv/bin/activate  
+
+3. **Install dependencies**  
+   pip install -r requirements.txt  
+
+4. **Run the Flask app**  
+   python app.py  
+
+5. **Open the application in your browser**  
+   http://127.0.0.1:5000/  
+
+✅ Now your app should be running locally — you can upload images/videos and try all processing features.  
+
+## 🧪 Testing  
+
+The application was tested for:  
+- ✅ Valid/invalid file uploads  
+- ✅ Image operations (shapes, text, ROI, resize, blending)  
+- ✅ Video operations (frame count, overlay timestamp, face detection)  
+- ✅ Mobile/desktop responsiveness  
+
+## 🚀 Future Enhancements  
+
+- 📷 Real-time webcam support for live processing  
+- 📦 Batch processing for multiple images/videos  
+- 🎨 Advanced filters & AI-powered image enhancements  
+- ☁️ Cloud integration (Google Drive, AWS S3, Dropbox)  
+- 🔑 User accounts & history tracking  
+
+## 📖 References  
+
+- [Flask Documentation](https://flask.palletsprojects.com/)  
+- [OpenCV Documentation](https://docs.opencv.org/)  
+- [Python Official Docs](https://docs.python.org/3/)  
+- [Bootstrap](https://getbootstrap.com/)  
+- [MDN Web Docs](https://developer.mozilla.org/)  
+
+## 👩‍💻 Author  
+
+**Devathi Srija**  
+_Viharatech | 2025_  
+
 
 
 
