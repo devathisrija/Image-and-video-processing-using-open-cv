@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ROI Processing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        img {
+            max-width: 80%;
+            margin: 20px auto;
+            display: block;
+        }
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>ROI Processing</h2>
+
+    {% if image_url %}
+        <p>ROI operation completed successfully!</p>
+        <img src="{{ image_url }}" alt="Processed Image">
+        <a href="{{ download_url }}" class="download-btn" download>Download Image</a>
+    {% else %}
+        <p>Please follow the instructions in the OpenCV window to select ROI points.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DS INTERN - Image & Video Processor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --accent: #4895ef;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --success: #4cc9f0;
+      --warning: #f72585;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      padding: 2rem;
+      color: var(--dark);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeIn 1s ease;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #4361ee, #3a0ca3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin: 1.5rem 0;
+      font-weight: 600;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .upload-area {
+      border: 2px dashed var(--accent);
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      margin: 1rem 0;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .upload-area:hover {
+      border-color: var(--primary);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+    }
+
+    .btn i {
+      margin-right: 8px;
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-danger {
+      background: var(--warning);
+      box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+    }
+
+    .btn-danger:hover {
+      background: #d91a6b;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-card {
+      background: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-card i {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .preview-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .preview-media {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .preview-media:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1.5rem;
+      color: white;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(67, 97, 238, 0.3);
+    }
+
+    .file-input {
+      display: none;
+    }
+
+    .file-label {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin: 0.5rem;
+      box-shadow: 0 4px 15px rgba(72, 149, 239, 0.3);
+    }
+
+    .file-label:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .file-name {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-camera-retro"></i> DS INTERN - Image & Video Processor</h1>
+      <p>A powerful tool for all your media processing needs</p>
+    </header>
+
+    <!-- IMAGE UPLOAD -->
+    <div class="card">
+      <h2><i class="fas fa-image"></i> Upload Image</h2>
+      <div class="upload-area">
+        <form method="POST" enctype="multipart/form-data">
+          <label for="image-upload" class="file-label">
+            <i class="fas fa-cloud-upload-alt"></i> Choose Image
+          </label>
+          <input id="image-upload" type="file" name="image" accept="image/*" class="file-input" required>
+          <button class="btn" type="submit"><i class="fas fa-upload"></i> Upload Image</button>
+        </form>
+      </div>
+
+      <!-- IMAGE DISPLAY -->
+      {% if image_url and not image_url.endswith('.mp4') %}
+        <div class="preview-container">
+          <img src="{{ image_url }}" alt="Uploaded Image" class="preview-media">
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- IMAGE OPTIONS -->
+    {% if image_url and not image_url.endswith('.mp4') %}
+      <div class="card">
+        <h2><i class="fas fa-sliders-h"></i> Image Processing Tools</h2>
+        <div class="grid-container">
+          <form action="/line" method="GET">
+            <button class="feature-card" type="submit">
+              <i class="fas fa-slash"></i>
+              <h3>Draw Line</h3>
+            </button>
+          </form>
+
+          <form action="/arrowed_line" method="GET">
+            <button class="feature-card" type="submit">
+              <i class="fas fa-arrow-right"></i>
+              <h3>Arrowed Line</h3>
+            </button>
+          </form>
+
+          <form action="/rectangle" method="GET">
+            <button class="feature-card" type="submit">
+              <i class="far fa-square"></i>
+              <h3>Draw Rectangle</h3>
+            </button>
+          </form>
+
+          <form action="/circle" method="GET">
+            <button class="feature-card" type="submit">
+              <i class="far fa-circle"></i>
+              <h3>Draw Circle</h3>
+            </button>
+          </form>
+
+          <form action="/text" method="GET">
+            <button class="feature-card" type="submit">
+              <i class="fas fa-font"></i>
+              <h3>Add Text</h3>
+            </button>
+          </form>
+
+          <form action="/datetime" method="POST">
+            <button class="feature-card" type="submit">
+              <i class="far fa-clock"></i>
+              <h3>Add Date & Time</h3>
+            </button>
+          </form>
+
+          <form action="/edge" method="POST">
+            <button class="feature-card" type="submit">
+              <i class="fas fa-border-all"></i>
+              <h3>Edge Detection</h3>
+            </button>
+          </form>
+
+          <form action="/face_detect_photo" method="POST">
+            <button class="feature-card" type="submit">
+              <i class="far fa-smile"></i>
+              <h3>Face Detect</h3>
+            </button>
+          </form>
+
+          <form action="/resize" method="POST">
+            <button class="feature-card" type="submit">
+              <i class="fas fa-expand"></i>
+              <h3>Resize</h3>
+            </button>
+          </form>
+
+          <form action="/add" method="GET">
+            <button class="feature-card" type="submit">
+              <i class="fas fa-layer-group"></i>
+              <h3>Add Image</h3>
+            </button>
+          </form>
+
+          <form action="/add_weight" method="GET">
+            <button class="feature-card" type="submit">
+              <i class="fas fa-balance-scale"></i>
+              <h3>Weighted Add</h3>
+            </button>
+          </form>
+
+          <form action="/roi" method="POST">
+            <button class="feature-card" type="submit">
+              <i class="fas fa-crop"></i>
+              <h3>ROI</h3>
+            </button>
+          </form>
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- VIDEO PROCESSING -->
+<div class="card">
+  <h2><i class="fas fa-video"></i> Video Processing</h2>
+  <div class="upload-area">
+    <form method="POST" action="/video" enctype="multipart/form-data" onsubmit="return validateVideoSize()">
+      <label for="video-upload" class="file-label">
+        <i class="fas fa-video"></i> Choose Video
+      </label>
+      <input id="video-upload" type="file" name="video" accept="video/*" class="file-input" required>
+      <p style="margin: 1rem 0; color: #666; font-size: 0.9rem;">
+        <i class="fas fa-info-circle"></i> Please upload videos below 200MB in size
+      </p>
+      <button class="btn" type="submit"><i class="fas fa-upload"></i> Upload Video</button>
+    </form>
+  </div>
+
+  <!-- ... rest of your video processing code ... -->
+</div>
+
+      {% if video_url %}
+        <div class="preview-container">
+          <video width="640" controls class="preview-media">
+            <source src="{{ video_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="action-buttons">
+          <form action="/frame_count" method="post">
+            <button class="btn" type="submit"><i class="fas fa-film"></i> Count Frames</button>
+          </form>
+
+          <form action="/overlay_datetime" method="post">
+            <button class="btn" type="submit"><i class="far fa-clock"></i> Overlay Date & Time</button>
+          </form>
+
+          <form action="/face_detect_video" method="post">
+            <button class="btn" type="submit"><i class="far fa-smile"></i> Detect Faces</button>
+          </form>
+        </div>
+
+        {% if frame_count %}
+          <div class="card" style="text-align: center; margin-top: 1rem;">
+            <h3><i class="fas fa-info-circle"></i> Video Information</h3>
+            <p>Frame Count: {{ frame_count }}</p>
+          </div>
+        {% endif %}
+
+        {% if overlay_output %}
+          <div class="action-buttons">
+            <a href="{{ overlay_output }}" download class="btn btn-outline">
+              <i class="fas fa-download"></i> Download Overlayed Video
+            </a>
+          </div>
+        {% endif %}
+
+        {% if face_detect_output %}
+          <div class="action-buttons">
+            <a href="{{ face_detect_output }}" download class="btn btn-outline">
+              <i class="fas fa-download"></i> Download Face Detected Video
+            </a>
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+    <footer>
+      <p>PROJECT BY DEVATHI SRIJA | © 2023 All Rights Reserved</p>
+    </footer>
+  </div>
+
+  <script>
+    // Display selected file names
+    document.getElementById('image-upload').addEventListener('change', function(e) {
+      const fileName = e.target.files[0]?.name || 'No file selected';
+      const label = e.target.previousElementSibling;
+      label.innerHTML = `<i class="fas fa-file-image"></i> ${fileName}`;
+    });
+
+    document.getElementById('video-upload').addEventListener('change', function(e) {
+      const fileName = e.target.files[0]?.name || 'No file selected';
+      const label = e.target.previousElementSibling;
+      label.innerHTML = `<i class="fas fa-file-video"></i> ${fileName}`;
+    });
+    <script>
+  // Display selected file names
+  document.getElementById('image-upload').addEventListener('change', function(e) {
+    const fileName = e.target.files[0]?.name || 'No file selected';
+    const label = e.target.previousElementSibling;
+    label.innerHTML = `<i class="fas fa-file-image"></i> ${fileName}`;
+  });
+
+  document.getElementById('video-upload').addEventListener('change', function(e) {
+    const fileName = e.target.files[0]?.name || 'No file selected';
+    const label = e.target.previousElementSibling;
+    label.innerHTML = `<i class="fas fa-file-video"></i> ${fileName}`;
+
+    // Show size warning if file is too large
+    const file = e.target.files[0];
+    if (file && file.size > 200 * 1024 * 1024) { // 200MB in bytes
+      alert('Warning: The selected video is larger than 200MB. Please choose a smaller file.');
+    }
+  });
+
+  function validateVideoSize() {
+    const videoInput = document.getElementById('video-upload');
+    if (videoInput.files.length > 0) {
+      const fileSize = videoInput.files[0].size; // in bytes
+      const maxSize = 200 * 1024 * 1024; // 200MB in bytes
+
+      if (fileSize > maxSize) {
+        alert('Error: Video file exceeds 200MB limit. Please choose a smaller file.');
+        return false;
+      }
+    }
+    return true;
+  }
+
+
+  </script>
+</body>
+</html>

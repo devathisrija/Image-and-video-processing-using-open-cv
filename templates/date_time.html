@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Date & Time - DS INTERN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --accent: #4895ef;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --success: #28a745;
+      --warning: #f72585;
+      --info: #17a2b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      padding: 2rem;
+      color: var(--dark);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+      animation: fadeIn 1s ease;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #4361ee, #3a0ca3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin: 1.5rem 0;
+      font-weight: 600;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .instructions {
+      background-color: rgba(72, 149, 239, 0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid var(--accent);
+      text-align: center;
+    }
+
+    .instructions p {
+      margin: 0;
+      color: var(--dark);
+      font-weight: 500;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    input[type="color"] {
+      width: 100%;
+      height: 50px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #e9ecef;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="number"]:focus,
+    select:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .btn {
+      background: var(--info);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .btn i {
+      margin-right: 8px;
+    }
+
+    .btn:hover {
+      background: #138496;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(23, 162, 184, 0.4);
+    }
+
+    .preview-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .preview-media {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .preview-media:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+
+    .action-btn {
+      flex: 1 1 30%;
+      min-width: 120px;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--info);
+      color: var(--info);
+      box-shadow: none;
+    }
+
+    .btn-outline:hover {
+      background: var(--info);
+      color: white;
+    }
+
+    .btn-warning {
+      background: var(--warning);
+      box-shadow: 0 4px 15px rgba(247, 37, 133, 0.3);
+    }
+
+    .btn-warning:hover {
+      background: #d91a6b;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+      }
+
+      .action-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="far fa-clock"></i> Add Date & Time</h1>
+      <p>Add current timestamp to your image</p>
+    </header>
+
+    <div class="card">
+      <div class="instructions">
+        <p><i class="fas fa-info-circle"></i> Customize the appearance of the date/time stamp</p>
+      </div>
+
+      <form action="/datetime" method="POST">
+        <div class="form-group">
+          <label for="color"><i class="fas fa-palette"></i> Text Color:</label>
+          <input type="color" id="color" name="color" value="#000000" required>
+        </div>
+
+        <div class="form-group">
+          <label for="font_scale"><i class="fas fa-text-height"></i> Font Size (0.1-10):</label>
+          <input type="number" id="font_scale" name="font_scale" min="0.1" max="10" step="0.1" value="1.0" required>
+        </div>
+
+        <div class="form-group">
+          <label for="thickness"><i class="fas fa-ruler-horizontal"></i> Text Thickness (1-10px):</label>
+          <input type="number" id="thickness" name="thickness" min="1" max="10" value="2" required>
+        </div>
+
+        <div class="form-group">
+          <label for="font"><i class="fas fa-font"></i> Font Style:</label>
+          <select name="font" id="font">
+            <option value="0">FONT_HERSHEY_SIMPLEX</option>
+            <option value="1">FONT_HERSHEY_PLAIN</option>
+            <option value="2">FONT_HERSHEY_DUPLEX</option>
+            <option value="3">FONT_HERSHEY_COMPLEX</option>
+            <option value="4">FONT_HERSHEY_TRIPLEX</option>
+            <option value="5">FONT_HERSHEY_COMPLEX_SMALL</option>
+            <option value="6">FONT_HERSHEY_SCRIPT_SIMPLEX</option>
+            <option value="7">FONT_HERSHEY_SCRIPT_COMPLEX</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">
+          <i class="fas fa-calendar-alt"></i> Add Date & Time
+        </button>
+      </form>
+    </div>
+
+    {% if image_url %}
+      <div class="card">
+        <h2><i class="fas fa-image"></i> Result</h2>
+        <div class="preview-container">
+          <img src="{{ image_url }}" alt="Processed Image" class="preview-media">
+        </div>
+
+        <div class="action-buttons">
+          <a href="{{ image_url }}" download class="btn btn-outline action-btn">
+            <i class="fas fa-download"></i> Download
+          </a>
+          <a href="/datetime" class="btn btn-warning action-btn">
+            <i class="fas fa-redo"></i> Try Again
+          </a>
+          <a href="/" class="btn action-btn" style="background: var(--primary);">
+            <i class="fas fa-home"></i> Back to Home
+          </a>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>
+

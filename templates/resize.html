@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resize Image</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        .form-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn-home {
+            background-color: #007bff;
+        }
+        .btn-home:hover {
+            background-color: #0069d9;
+        }
+        .original-size {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Resize Image</h2>
+
+        {% if original_width and original_height %}
+            <p class="original-size">Original size: {{ original_width }} × {{ original_height }} pixels</p>
+        {% endif %}
+
+        <form method="POST" action="/resize">
+            <div class="form-group">
+                <label for="width">New Width (pixels):</label>
+                <input type="number" id="width" name="width" min="1" required
+                       value="{{ request.form.width or original_width }}">
+            </div>
+
+            <div class="form-group">
+                <label for="height">New Height (pixels):</label>
+                <input type="number" id="height" name="height" min="1" required
+                       value="{{ request.form.height or original_height }}">
+            </div>
+
+            <button type="submit" class="btn">Resize Image</button>
+        </form>
+
+        {% if image_url %}
+            <div>
+                <img src="{{ image_url }}" alt="Resized Image">
+            </div>
+            <div>
+                <a href="{{ download_url }}" class="btn" download>Download Resized Image</a>
+                <a href="/" class="btn btn-home">Back to Home</a>
+            </div>
+        {% endif %}
+
+        {% if not image_url %}
+            <a href="/" class="btn btn-home">Back to Home</a>
+        {% endif %}
+    </div>
+</body>
+</html>
