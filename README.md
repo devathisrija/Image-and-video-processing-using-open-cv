@@ -136,8 +136,7 @@ This section provides visual references for each feature of the **Image & Video 
 ### Image Processing Features
 
 **Upload Image**  
-![Upload Image](screenshots/Screenshot652.png)
-
+![Upload Image](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(651).png)
 
 
 **Draw Line**  
