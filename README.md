@@ -136,7 +136,8 @@ This section provides visual references for each feature of the **Image & Video 
 ### Image Processing Features
 
 **Upload Image**  
-![Upload Image](screenshots/Screenshot (652).png)
+![Upload Image](screenshots/Screenshot652.png)
+
 
 
 **Draw Line**  
