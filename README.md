@@ -140,7 +140,7 @@ This section provides visual references for each feature of the **Image & Video 
 
 
 **Draw Line**  
-![Draw Line](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(651).png)
+![Draw Line](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(661).png)
 
 **Draw ArrowedLine**  
 ![Draw ArrowedLine](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(663).png)
@@ -178,12 +178,8 @@ This section provides visual references for each feature of the **Image & Video 
 ![Frame Count](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(683).png)  
 
 **Date/Time Overlay (Video)**  
-![DateTime Video](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(656).png)  
+![DateTime Video](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(656).png)   
 
-**Face Detection (Video)**  
-![Face Detection Video](path/to/screenshot13.png)  
-
-> **Note:** Replace `path/to/screenshotX.png` with the actual paths to your screenshots.
 
 
 ## 🧪 Testing  
