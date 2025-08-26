@@ -140,39 +140,45 @@ This section provides visual references for each feature of the **Image & Video 
 
 
 **Draw Line**  
-![Draw Line](path/to/screenshot2.png)  
+![Draw Line](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(651).png)
+
+**Draw ArrowedLine**  
+![Draw ArrowedLine](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(663).png)
+
+**Draw Rectangle**  
+![Draw Rectangle](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(665).png)
 
 **Add Text**  
-![Add Text](path/to/screenshot3.png)  
+![Add Text](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(669).png)
 
 **Draw Circle**  
-![Draw Circle](path/to/screenshot4.png)  
+![Draw Circle](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(667).png)  
 
 **Add Date/Time**  
-![Add DateTime](path/to/screenshot5.png)  
+![Add DateTime](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(672).png)  
 
 **Image Addition**  
-![Add Images](path/to/screenshot6.png)  
+![Add Images](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(678).png)  
 
 **Weighted Addition**  
-![Weighted Add](path/to/screenshot7.png)  
+![Weighted Add](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(680).png)  
 
 **Edge Detection**  
-![Edge Detection](path/to/screenshot8.png)  
+![Edge Detection](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(673).png)  
 
 **Face Detection (Image)**  
-![Face Detection](path/to/screenshot9.png)  
+![Face Detection](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(674).png)  
 
 ### Video Processing Features
 
 **Upload Video**  
-![Upload Video](path/to/screenshot10.png)  
+![Upload Video](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(654).png)  
 
 **Frame Count**  
-![Frame Count](path/to/screenshot11.png)  
+![Frame Count](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(683).png)  
 
 **Date/Time Overlay (Video)**  
-![DateTime Video](path/to/screenshot12.png)  
+![DateTime Video](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(656).png)  
 
 **Face Detection (Video)**  
 ![Face Detection Video](path/to/screenshot13.png)  
