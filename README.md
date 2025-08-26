@@ -75,8 +75,6 @@ Users can:
 │   ├── uploads/        # Uploaded images/videos
 │   ├── outputs/        # Processed images/videos
 │   ├── videos/         # Uploaded videos
-│   ├── css/            # Stylesheets
-│   └── js/             # JavaScript files
 ├── logging_file.py     # Custom logging setup
 ├── requirements.txt    # Python dependencies
 ├── README.md           # Project documentation
@@ -136,7 +134,7 @@ This section provides visual references for each feature of the **Image & Video 
 ### Image Processing Features
 
 **Upload Image**  
-![Upload Image](https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(651).png)
+<img src="(https://github.com/devathisrija/Image-and-video-processing-using-open-cv/blob/main/screenshots/Screenshot%20(651).png)" alt="Upload Image" width="400"/>
 
 
 **Draw Line**  
