@@ -1,6 +1,8 @@
 # Image-and-video-processing-using-open-cv
-# 🖼️🎥 Image & Video Processor  
+## 🖼️🎥 Image & Video Processor  
 _A powerful web-based tool for all your media processing needs_
+
+---
 
 ## 📌 Overview  
 This project is a **Flask-based Image and Video Processing Application** that allows users to perform a wide variety of editing and analysis tasks directly through the browser.  
@@ -51,6 +53,7 @@ Users can:
 - Git & GitHub
 
 ---
+
 ## 📂 Project Structure  
 
 ```plaintext
@@ -78,37 +81,54 @@ Users can:
 ├── requirements.txt    # Python dependencies
 ├── README.md           # Project documentation
 └── screenshots/        # Screenshots for README (optional)
+```
 
+---
 
 ## ⚙️ Installation & Setup  
 
 Follow these steps to set up and run the project locally:
 
 1. **Clone the repository**  
-   git clone https://github.com/your-username/image-video-processor.git  
-   cd image-video-processor  
+   ```bash
+   git clone https://github.com/your-username/image-video-processor.git
+   cd image-video-processor
+   ```
 
 2. **(Optional) Create a virtual environment**  
    It’s recommended to use a virtual environment to avoid dependency conflicts.  
-
-   python -m venv venv  
+   ```bash
+   python -m venv venv
+   ```
 
    Activate it:  
-   - Windows (PowerShell):  
-     venv\Scripts\activate  
-   - Linux / macOS:  
-     source venv/bin/activate  
+   - **Windows (PowerShell):**  
+     ```bash
+     venv\Scripts\activate
+     ```
+   - **Linux / macOS:**  
+     ```bash
+     source venv/bin/activate
+     ```
 
 3. **Install dependencies**  
-   pip install -r requirements.txt  
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 4. **Run the Flask app**  
-   python app.py  
+   ```bash
+   python app.py
+   ```
 
 5. **Open the application in your browser**  
-   http://127.0.0.1:5000/  
+   ```
+   http://127.0.0.1:5000/
+   ```
 
-✅ Now your app should be running locally — you can upload images/videos and try all processing features.  
+✅ Now your app should be running locally — you can upload images/videos and try all processing features.
+
+---
 
 ## 🧪 Testing  
 
@@ -118,6 +138,8 @@ The application was tested for:
 - ✅ Video operations (frame count, overlay timestamp, face detection)  
 - ✅ Mobile/desktop responsiveness  
 
+---
+
 ## 🚀 Future Enhancements  
 
 - 📷 Real-time webcam support for live processing  
@@ -125,6 +147,8 @@ The application was tested for:
 - 🎨 Advanced filters & AI-powered image enhancements  
 - ☁️ Cloud integration (Google Drive, AWS S3, Dropbox)  
 - 🔑 User accounts & history tracking  
+
+---
 
 ## 📖 References  
 
@@ -134,10 +158,12 @@ The application was tested for:
 - [Bootstrap](https://getbootstrap.com/)  
 - [MDN Web Docs](https://developer.mozilla.org/)  
 
+---
+
 ## 👩‍💻 Author  
 
 **Devathi Srija**  
-_Viharatech | 2025_  
+_Viharatech | 2025_
 
 
 
