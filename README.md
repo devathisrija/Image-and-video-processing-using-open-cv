@@ -53,6 +53,30 @@ Users can:
 ---
 
 ## 📂 Project Structure 
+├── app.py # Flask main application
+├── index.py # Image & video processing logic (OpenCV)
+├── templates/ # HTML templates (index, line, circle, text, etc.)
+│ ├── index.html
+│ ├── line.html
+│ ├── circle.html
+│ ├── text.html
+│ ├── resize.html
+│ ├── add.html
+│ ├── add_weight.html
+│ ├── roi.html
+│ ├── edge.html
+│ ├── face_detect_photo.html
+│ └── other feature-specific pages...
+├── static/ # Static files (uploaded & processed content)
+│ ├── uploads/ # Uploaded images/videos
+│ ├── outputs/ # Processed images/videos
+│ ├── videos/ # Uploaded videos
+│ ├── css/ # Stylesheets
+│ └── js/ # JavaScript files
+├── logging_file.py # Custom logging setup
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation
+└── screenshots/ # Screenshots for README (optional)
 ---
 
 ## ⚙️ Installation & Setup  
@@ -61,14 +85,14 @@ Users can:
    ```bash
    git clone https://github.com/your-username/image-video-processor.git
    cd image-video-processor
-2. **Create virtual environment**
+2. **Create virtual environment :**
    python -m venv venv
    source venv/bin/activate   # On Windows: venv\Scripts\activate
-3. **Install dependencies**
+3. **Install dependencies :**
    pip install -r requirements.txt
-4. **Run the Flask app**
+4. **Run the Flask app :**
    python app.py
-5. **Open the browser and visit:**
+5. **Open the browser and visit :**
    http://127.0.0.1:5000/
 
 
