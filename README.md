@@ -52,5 +52,24 @@ Users can:
 
 ---
 
-## 📂 Project Structure  
+## 📂 Project Structure 
+---
+
+## ⚙️ Installation & Setup  
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/your-username/image-video-processor.git
+   cd image-video-processor
+2. **Create virtual environment**
+   python -m venv venv
+   source venv/bin/activate   # On Windows: venv\Scripts\activate
+3. **Install dependencies**
+   pip install -r requirements.txt
+4. **Run the Flask app**
+   python app.py
+5. **Open the browser and visit:**
+   http://127.0.0.1:5000/
+
+
 
