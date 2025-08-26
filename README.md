@@ -136,7 +136,7 @@ This section provides visual references for each feature of the **Image & Video 
 ### Image Processing Features
 
 **Upload Image**  
-![Upload Image](C:/Users/srija/Pictures/Screenshots/Screenshot (652).png)
+![Upload Image](screenshots/Screenshot (652).png)
 
 
 **Draw Line**  
